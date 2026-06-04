@@ -66,6 +66,7 @@ $size-40: 2.5rem;
 $size-32: 2rem;
 $size-24: 1.5rem;
 $size-22: 1.375rem;
+$size-20: 1.25rem;
 $size-16: 1rem;
 $size-12: 0.75rem;
 $size-10: 0.625rem;
@@ -88,8 +89,6 @@ $radius-4: 4px;
 $radius-0: 0;
 
 $wrapper-max-width: 70rem;
-$spacing-inline: 1em;
-$spacing-block-start: 2rem;
 
 /* ----------------  */
 /* Custom Fonts      */
@@ -289,11 +288,13 @@ body {
 	justify-content: space-between;
 }
 
+.margin-inline-center {
+	margin-inline: auto;
+}
+
 .wrapper {
 	width: min(95vw, $wrapper-max-width);
 	margin-inline: auto;
-	padding-inline: $spacing-inline;
-	padding-block-start: $spacing-block-start;
 }
 
 .sr-only {
@@ -333,6 +334,7 @@ h1,
 	@include text-preset-1;
 	max-width: 15ch;
 	margin-inline: auto;
+	margin-block-end: $size-20;
 
 	@media (min-width: 40rem) {
 		max-width: unset;
@@ -343,6 +345,11 @@ h2,
 .looks-h2 {
 	@include text-preset-2;
 	color: hsl(var(--clr-neutral-900));
+	margin-block: $size-20;
+
+	@media (min-width: 40rem) {
+		margin-block-start: unset;
+	}
 }
 
 h1,
@@ -362,6 +369,7 @@ p {
 	color: hsl(var(--clr-neutral-100));
 
 	cursor: pointer;
+	display: block;
 	border: none;
 	padding: $size-12 $size-24;
 	border-radius: $radius-full;
@@ -386,6 +394,8 @@ p {
 
 	&.primary--btn {
 		background-color: hsl(var(--clr-light-red-500));
+		margin-inline: auto;
+		margin-block-start: $size-32;
 
 		&:hover {
 			background-color: hsl(var(--clr-summer-yellow-500));
@@ -406,14 +416,142 @@ p {
 /* Sections          */
 /* ----------------  */
 
+header {
+	margin-block-start: $size-24;
+}
+
+section {
+	margin-block: $size-80;
+}
+
+.hero-section,
+.skills-section {
+	margin-block: $size-64;
+}
+
+.skills-section {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-areas:
+		'one one'
+		'two three'
+		'four four'
+		'five five'
+		'six six';
+	gap: $size-20;
+
+	div {
+		border-radius: $radius-8;
+		padding: $size-20;
+
+		p {
+			@include text-preset-3;
+
+			color: hsl(var(--clr-neutral-100));
+			text-align: left;
+		}
+	}
+
+	.grid-area-1 {
+		grid-area: one;
+		background-color: hsl(var(--clr-galactic-blue-500));
+	}
+	.grid-area-2 {
+		grid-area: two;
+		background-color: hsl(var(--clr-summer-yellow-500));
+	}
+	.grid-area-3 {
+		grid-area: three;
+		background-color: hsl(var(--clr-pink-500));
+	}
+	.grid-area-4 {
+		grid-area: four;
+		background-color: hsl(var(--clr-light-red-500));
+	}
+	.grid-area-5 {
+		grid-area: five;
+		background-color: hsl(var(--clr-cyan-500));
+	}
+	.grid-area-6 {
+		grid-area: six;
+		background-color: hsl(var(--clr-dark-purple-500));
+	}
+
+	@media (min-width: 35em) {
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-areas:
+			'one one two three'
+			'one one four four'
+			'five five six six';
+	}
+}
+
+.artist-section {
+	.artist-image {
+		aspect-ratio: 1/1;
+	}
+
+	@media (min-width: 45rem) {
+		display: grid;
+		grid-template-columns: minmax(300px, 445px) auto;
+		align-items: center;
+		gap: $size-32;
+
+		.artist-image {
+			width: 100%;
+			max-width: 445px;
+			min-width: 300px;
+			max-height: 445px;
+		}
+
+		div {
+			justify-self: end;
+			max-width: 40ch;
+
+			.looks-h2 {
+				margin-block-end: $size-32;
+			}
+
+			p {
+				text-align: left;
+			}
+
+			.btn {
+				margin-inline: unset;
+			}
+		}
+	}
+}
+
 .contact-section {
 	background-color: hsl(var(--clr-neutral-900));
 	color: hsl(var(--clr-neutral-200));
 	border-radius: $radius-10;
-	padding: $size-16 $size-40;
+	padding: $size-40 $size-16;
+	margin-block-end: $size-48;
 
 	.looks-h2 {
 		color: hsl(var(--clr-neutral-200));
+	}
+
+	@media (min-width: 50rem) {
+		padding: $size-80 $size-64;
+		display: grid;
+		grid-template-columns: 1fr auto;
+		align-items: center;
+		gap: $size-32;
+
+		.btn {
+			margin: unset;
+			justify-self: end;
+		}
+
+		div {
+			p {
+				max-width: 40ch;
+				text-align: left;
+			}
+		}
 	}
 }
 
