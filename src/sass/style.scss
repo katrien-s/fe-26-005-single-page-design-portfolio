@@ -505,7 +505,7 @@ section {
 	@each $area in $grid-areas {
 		.grid-area-#{$area} {
 			grid-area: $area;
-			background-color: hsl(map-get($grid-colors, $area));
+			background-color: hsl(map.get($grid-colors, $area));
 			display: flex;
 			flex-direction: column;
 			justify-content: space-between;
