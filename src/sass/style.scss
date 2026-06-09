@@ -531,13 +531,20 @@ section {
 		}
 	}
 
-	@media (min-width: 35em) {
+	@media (min-width: $bp-small) {
 		grid-template-columns: repeat(4, 1fr);
 		grid-template-rows: unset;
 		grid-template-areas:
 			'one one two three'
 			'one one four four'
 			'five five six six';
+	}
+
+	@media (min-width: $bp-desktop) {
+		grid-template-columns: repeat(6, 1fr);
+		grid-template-areas:
+			'one one two three five five'
+			'one one four four six six'
 	}
 }
 
