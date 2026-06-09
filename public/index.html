@@ -17,6 +17,8 @@
 		<title>Frontend Mentor | Single-page design portfolio</title>
 	</head>
 	<body>
+		<a href="#main-content" class="skip-to-content">Skip to content</a>
+
 		<header class="wrapper flex-center-between">
 			<span>
 				<svg
@@ -30,9 +32,9 @@
 					</g>
 				</svg>
 			</span>
-			<button class="btn">Free Consultation</button>
+			<button type="button" class="btn">Free Consultation</button>
 		</header>
-		<main>
+		<main id="main-content">
 			<section class="hero-section wrapper">
 				<h1 class="hero-section__title">Design solutions made easy</h1>
 				<p class="hero-section__text">
@@ -328,8 +330,6 @@
 				<img
 					src="./assets/image-amy.webp"
 					alt="Amy"
-					loading="lazy"
-					sizes="auto"
 					class="artist-image margin-inline-center"
 				/>
 				<div>
@@ -341,45 +341,68 @@
 						I’ve designed everything from brand illustrations to complete mobile
 						apps. I’m also handy with a camera!
 					</p>
-					<button class="btn btn--primary">Free Consultation</button>
+					<button type="button" class="btn btn--primary">
+						Free Consultation
+					</button>
 				</div>
 			</section>
 			<section class="work-section">
 				<h2 class="work-section__title">My Work</h2>
-				<div class="slider">
-					<img
-						src="./assets/image-slide-1.jpg"
-						alt=""
-						class="slider__img"
-						data-index="1"
-					/>
-					<img
-						src="./assets/image-slide-2.jpg"
-						alt=""
-						class="slider__img"
-						data-index="2"
-					/>
-					<img
-						src="./assets/image-slide-3.jpg"
-						alt=""
-						class="slider__img"
-						data-index="3"
-					/>
-					<img
-						src="./assets/image-slide-4.jpg"
-						alt=""
-						class="slider__img"
-						data-index="4"
-					/>
-					<img
-						src="./assets/image-slide-5.jpg"
-						alt=""
-						class="slider__img"
-						data-index="5"
-					/>
+				<div class="slider" aria-label="Gallery">
+					<div class="slide">
+						<img
+							src="./assets/image-slide-1.jpg"
+							alt=""
+							class="slider__img"
+							data-index="1"
+							width="540"
+							height="360"
+						/>
+					</div>
+					<div class="slide">
+						<img
+							src="./assets/image-slide-2.jpg"
+							alt=""
+							class="slider__img"
+							data-index="2"
+							width="540"
+							height="360"
+						/>
+					</div>
+					<div class="slide">
+						<img
+							src="./assets/image-slide-3.jpg"
+							alt=""
+							class="slider__img"
+							data-index="3"
+							width="540"
+							height="360"
+						/>
+					</div>
+					<div class="slide">
+						<img
+							src="./assets/image-slide-4.jpg"
+							alt=""
+							class="slider__img"
+							data-index="4"
+							width="540"
+							height="360"
+						/>
+					</div>
+					<div class="slide">
+						<img
+							src="./assets/image-slide-5.jpg"
+							alt=""
+							class="slider__img"
+							data-index="5"
+							width="540"
+							height="360"
+						/>
+					</div>
 				</div>
 				<div class="slider__indicators">
 					<button
+						type="button"
 						class="slider__btn slider__btn--prev"
 						aria-label="Previous slide"
 					>
@@ -392,7 +415,11 @@
 							</svg>
 						</span>
 					</button>
-					<button class="slider__btn slider__btn--next" aria-label="Next slide">
+					<button
+						type="button"
+						class="slider__btn slider__btn--next"
+						aria-label="Next slide"
+					>
 						<span>
 							<svg width="15" height="16" xmlns="http://www.w3.org/2000/svg">
 								<path
@@ -429,7 +456,7 @@
 					</g>
 				</svg>
 			</span>
-			<button class="btn">Free Consultation</button>
+			<button type="button" class="btn">Free Consultation</button>
 		</footer>
 	</body>
 </html>
