@@ -33,7 +33,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Github](https://github.com/katrien-s/fe-26-005-single-page-design-portfolio)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Netlify](https://fe-26-005-single-page-design-portfoli.netlify.app/)
 
 ## My process
 
